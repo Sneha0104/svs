@@ -8,6 +8,8 @@ import { BrowserRouter as Router,Route,Link,Switch } from "react-router-dom";
 import AdminLogin from './AdminloginComponent'
 import Home from './HomeComponent';
 import { Redirect } from 'react-router-dom';
+import { WEB } from './webtools';
+
 
 class Login extends Component {
 constructor(props){
@@ -15,6 +17,7 @@ constructor(props){
   this.state={
   username:'',
   password:'',
+  webs: WEB,
   //buttonLabel1:'Admin Login'
   }
  }
@@ -32,6 +35,7 @@ constructor(props){
     console.log("Login successfull");
     var homepage=[];
     homepage.push(<Home appContext={self.props.appContext}/>)
+    homepage.push(<Home webs = {this.state.webs}/>)
     self.props.appContext.setState({loginPage:[],homepage:homepage})
     }
     else if(response.data.code === 204){

@@ -2,6 +2,7 @@ import React from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
 import { Button } from 'reactstrap'; 
 import { Card, CardImg, CardText, CardBody, CardTitle } from 'reactstrap';
+import Group from './Chat/Group.js' 
  
     function RenderWeb({web}) {
         return(
@@ -15,6 +16,20 @@ import { Card, CardImg, CardText, CardBody, CardTitle } from 'reactstrap';
             </div>  
         );
     }
+    function renderWeb(web){
+        if(web!=null){
+            return(
+                <div>
+                    <Group selectedWeb={web} />
+                </div>
+            );
+        }
+        else{
+            return (
+                <div></div>
+            );
+        }
+    }
     function RenderDesc({web}) {
         return(
             <div className="col-12 col-md-6 m-3 shadow p-3 mb-5 bg-white rounded">
@@ -26,7 +41,7 @@ import { Card, CardImg, CardText, CardBody, CardTitle } from 'reactstrap';
                           </CardBody>
                          
                 </Card>
-                 <Button color="success" size="lg" block >
+                 <Button color="success" size="lg" block onClick={() => this.renderWeb(web)}>
                           Join
                 </Button>
             </div>  

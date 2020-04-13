@@ -37,7 +37,7 @@ export const WEB =
         id: 5,
         name:'django',
         image: 'assets/images/django.png',
-        description:'A quintessential ConFusion experience, is it a vada or is it a donut?',
+        description:'A quintessential ConFusion experience, django is a python framework',
         
         }
     ];
