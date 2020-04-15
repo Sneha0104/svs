@@ -6,10 +6,10 @@
 import firebase from 'firebase';
 
 const config = {
-  apiKey: 'AIzaSyBhZ4iHDh0vfrqCmPVnl8tszew4F78LCZ0',
-  authDomain: 'devchat-8253f.firebaseapp.com',
-  databaseURL: 'https://devchat-8253f.firebaseio.com',
-  storageBucket: 'devchat-8253f.appspot.com'
+  apiKey: '',
+  authDomain: '',
+  databaseURL: '',
+  storageBucket: ''
 };
 
 const firebaseApp = firebase.initializeApp(config);
