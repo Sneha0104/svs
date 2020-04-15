@@ -1,48 +1,68 @@
-
-import 'bootstrap/dist/css/bootstrap.css';
-//import logo from './logo.svg';
-import { Navbar,NavbarBrand } from 'reactstrap';
-import Home from './components/HomeComponent';
-//import HomeDetail from './components/DishdetailedComponent';
-import './App.css';
-
-
 import React, { Component } from 'react';
-import injectTapEventPlugin from 'react-tap-event-plugin';
-// Needed for onTouchTap
-// http://stackoverflow.com/a/34015469/988941
-
+import withFirebaseAuth from 'react-with-firebase-auth'
+import * as firebase from 'firebase/app';
+import 'firebase/auth';
+import config from './firebaseConfig';
+import logo from './logo.svg';
 import './App.css';
-import Loginscreen from './components/LoginscreenComponent';
-//injectTapEventPlugin();
+import Home from './components/HomeComponent';
+import {WEB} from './components/webtools';
+import firebaseApp from './firebaseConfig'
+//const firebaseApp = firebase.(config);
+import code from './code.jpg'
 class App extends Component {
-  constructor(props){
+  constructor(props) {
     super(props);
-    this.state={
-      loginPage:[],
-     // homepage:[]
-    }
-  }
-  componentWillMount(){
-    var loginPage =[];
-    loginPage.push(<Loginscreen parentContext={this}/>);
-    this.setState({
-                  loginPage:loginPage
-                    })
-  }
-  render() {
-    return (
-      <div className="App">
-       <Navbar>
-        <div className="container">
-          <NavbarBrand href="/">Ristorant con confuion</NavbarBrand>
-        </div>
-      </Navbar>
-        {this.state.loginPage}
+    this.state = {
+        web: WEB,
         
+    };
+  }
+
+  render() {
+    const {
+      user,
+      signOut,
+      signInWithGoogle,
+    } = this.props;
+
+    return (
+      
+      <div className="App" >
+      
+        <header className="App-header" >
+        
+        <div className="boxone">
+         <div className="boxone1">
+         <p>WELCOME TO DEVCHAT!</p>
+         </div>
+        
+          {
+            user
+              ? <Home  webs={this.state.web} />
+              : <p>Please sign in.</p>
+          }
+
+          {
+            user
+              ? <button onClick={signOut}>Sign out</button>
+              : <button  onClick={signInWithGoogle} className="btn-success" >Sign in with Google</button>
+          }
+           </div>
+        </header>
       </div>
+     
     );
   }
 }
-//{this.state.homepage}
-export default App;
+
+const firebaseAppAuth = firebaseApp.auth();
+
+const providers = {
+  googleProvider: new firebase.auth.GoogleAuthProvider(),
+};
+
+export default withFirebaseAuth({
+  providers,
+  firebaseAppAuth,
+})(App);
