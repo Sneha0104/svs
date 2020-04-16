@@ -48,16 +48,7 @@ import Group from './Chat/Group.js'
         );
     }
  
-    
- 
- 
- 
-    
- 
- 
     const HomeDetail = (props) => {
- 
-        
         if (props.selectedWeb != null) {
             return (
                 <div className="container">

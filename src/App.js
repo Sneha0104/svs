@@ -32,15 +32,17 @@ class App extends Component {
       
         <header className="App-header" >
         
-        <div className="boxone">
-         <div className="boxone1">
-         <p>WELCOME TO DEVCHAT!</p>
-         </div>
+        
         
           {
             user
               ? <Home  webs={this.state.web} />
-              : <p>Please sign in.</p>
+              :<div className="boxone">
+              <div className="boxone1">
+              <p>WELCOME TO DEVCHAT!</p>
+              </div>
+              </div>
+              
           }
 
           {
@@ -48,7 +50,7 @@ class App extends Component {
               ? <button onClick={signOut}>Sign out</button>
               : <button  onClick={signInWithGoogle} className="btn-success" >Sign in with Google</button>
           }
-           </div>
+           
         </header>
       </div>
      

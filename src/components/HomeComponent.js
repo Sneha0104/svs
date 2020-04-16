@@ -3,6 +3,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 //import { Button } from 'reactstrap'; 
 import { Card, CardImg, CardImgOverlay, CardText,CardBody, CardTitle } from 'reactstrap';
 import HomeDetail from './HomedetailedComponent';
+import '../App.css';
 class Home extends Component{
 
     constructor(props){
@@ -51,6 +52,7 @@ class Home extends Component{
             );
         });
         return(
+            <div className="container homecss">
             <div className="container">
                 <div className="row">
                     {this.renderWeb(this.state.selectedWeb)}
@@ -60,7 +62,7 @@ class Home extends Component{
                     
                 </div>
                 
-               
+               </div>
             </div>
         );
     }

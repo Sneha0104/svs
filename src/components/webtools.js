@@ -4,7 +4,7 @@ export const WEB =
         id: 0,
         name:'C++',
         image: 'assets/images/c++.png',
-        description:'A unique combination of Indian Uthappam (pancake) and Italian pizza, topped with Cerignola olives, ripe vine cherry tomatoes, Vidalia onion, Guntur chillies and Buffalo Paneer.',
+        description:'C++ is an Object Oriented Programming Language (OOPL) and is a highly Flexible language with Versatility. It can be used for developing System Software',
         },
         {
         id: 1,

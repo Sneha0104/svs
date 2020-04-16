@@ -52,11 +52,15 @@
 }
 .boxone1{
   width: 430px;
-
   height:150px;
   font-size:25px;
   color: white;
   background-color:hsla(0, 100%, 0%);
   padding: 50px;
   margin: 20px;
+}
+.homecss{
+  background-color: white;
+  color: black;
+
 }
