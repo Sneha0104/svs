@@ -10,7 +10,7 @@ export const WEB =
         id: 1,
         name:'python',
         image: 'assets/images/python.jpg',
-        description:'Deep fried Zucchini coated with mildly spiced Chickpea flour batter accompanied with a sweet-tangy tamarind sauce',
+        description:'Python is an interpreted, object-oriented programming language, that has gained popularity because of its clear syntax and readability. It is said to be relatively easy to learn and portable',
         
         },
         {
