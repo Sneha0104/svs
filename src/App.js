@@ -7,7 +7,8 @@ import logo from './logo.svg';
 import './App.css';
 import Home from './components/HomeComponent';
 import {WEB} from './components/webtools';
-import firebaseApp from './firebaseConfig'
+import firebaseApp from './firebaseConfig';
+
 //const firebaseApp = firebase.(config);
 import code from './code.jpg'
 class App extends Component {

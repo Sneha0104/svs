@@ -20,7 +20,7 @@ export default class Chat extends Component {
   componentWillMount() {
     const username = localStorage.getItem('chat_username');
     this.setState({username: username ? username : 'Unknown'});
-    const groupname = localStorage.getItem('group_groupname');
+    const groupname = localStorage.getItem('chat_groupname');
     this.setState({groupname: groupname ? groupname : 'Unknown'});
     const messagesRef = database.ref('messages')
       .orderByKey()
@@ -46,7 +46,7 @@ export default class Chat extends Component {
 
   render() {
     return (
-      <div>
+      <div id="chat">
         <nav class="navbar"><a href="http://localhost:3000/group#/chat">{this.state.groupname}</a></nav>
         <div className="padding-13 messages-div">
             
