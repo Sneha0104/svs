@@ -3,7 +3,8 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from '../App';
 import User from './User';
-
+import Chat from './Chat/Chat' 
+ 
 import Group from './Group';
 
 import { HashRouter, Route } from 'react-router-dom'
@@ -15,6 +16,8 @@ ReactDOM.render(
     
     <Route exact path="/" component={App}></Route>
     <Route exact path="/group/" component={Group}></Route>
-    <Route exact path="/chat" name="chat" component={Chat}></Route></div>
+    <Route exact path="/chat" name="chat" component={Chat}></Route>
+    <Route exact path="/python" component={Chat}></Route>
+    </div>
 </HashRouter>, document.getElementById('root'));
 registerServiceWorker.unregister();
