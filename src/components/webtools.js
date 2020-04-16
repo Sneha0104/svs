@@ -24,7 +24,7 @@ export const WEB =
         id: 3,
         name:'Android Studio',
         image: 'assets/images/android_studio.png',
-        description:'A delectable, semi-sweet New York Style Cheese Cake, with Graham cracker crust and spiced with Indian cardamoms',
+        description:'Android Studio is Androids official IDE. It is purpose-built for Android to accelerate your development and help you build the highest-quality apps for every Android device.',
         },
 	{
         id: 4,
