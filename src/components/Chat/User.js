@@ -1,7 +1,11 @@
 import React, { Component } from 'react';
-import { database } from '../firebase';
-import Group from './Group';
+//import * as firebase from 'firebase/app';
+//import { database } from '../../firebaseConfig';
 
+import Group from './Group';
+import Firebase from 'firebase';
+//import config from '../../firebaseConfig';
+const database = Firebase.database();
 export default class User extends Component {
   constructor() {
     super();
