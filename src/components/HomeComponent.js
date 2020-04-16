@@ -1,6 +1,8 @@
 import React , { Component } from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
 //import { Button } from 'reactstrap'; 
+import '../App.css';
+
 import { Card, CardImg, CardImgOverlay, CardText,CardBody, CardTitle } from 'reactstrap';
 import HomeDetail from './HomedetailedComponent';
 class Home extends Component{
@@ -51,7 +53,7 @@ class Home extends Component{
             );
         });
         return(
-            <div className="container">
+            <div className="container homecss">
                 <div className="row">
                     {this.renderWeb(this.state.selectedWeb)}
                 </div>

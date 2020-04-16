@@ -20,7 +20,7 @@ import Group from './Chat/Group.js'
         if(web!=null){
             return(
                 <div>
-                    <Group selectedWeb={web} />
+                    <Group  />
                 </div>
             );
         }
