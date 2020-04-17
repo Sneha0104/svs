@@ -2,7 +2,9 @@ import React, { Component } from 'react';
 //import { database } from '../../firebaseConfig';
 import Firebase from 'firebase';
 //import config from '../../firebaseConfig';
+import './Chat.css';
 const database = Firebase.database();
+
 
 export default class Chat extends Component {
   constructor() {
