@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
-import { database } from '../firebase';
-
+//import { database } from '../../firebaseConfig';
+import Firebase from 'firebase';
+//import config from '../../firebaseConfig';
+const database = Firebase.database();
 
 export default class Chat extends Component {
   constructor() {
@@ -18,7 +20,7 @@ export default class Chat extends Component {
   componentWillMount() {
     const username = localStorage.getItem('chat_username');
     this.setState({username: username ? username : 'Unknown'});
-    const groupname = localStorage.getItem('group_groupname');
+    const groupname = localStorage.getItem('chat_groupname');
     this.setState({groupname: groupname ? groupname : 'Unknown'});
     const messagesRef = database.ref('messages')
       .orderByKey()
@@ -44,7 +46,7 @@ export default class Chat extends Component {
 
   render() {
     return (
-      <div>
+      <div id="chat">
         <nav class="navbar"><a href="http://localhost:3000/group#/chat">{this.state.groupname}</a></nav>
         <div className="padding-13 messages-div">
             

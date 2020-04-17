@@ -1,14 +1,18 @@
 import React, { Component } from 'react';
-import { database } from '../firebase';
+//import { database } from '../../firebaseConfig';
 import User from './User';
-
+//import firebase from '../../firebaseConfig';
+import Firebase from 'firebase';
+//import config from '../../firebaseConfig';
+const database = Firebase.database();
 export default class Group extends Component {
+
   constructor() {
     super();
 
     this.state = {
       groups: [],
-      groupname: ''
+      groupname: ''      
     };
   }
 
@@ -38,7 +42,7 @@ export default class Group extends Component {
   render() {
     return(
       <div class="card">
-    <div className="form-group card-body">
+     <div className="form-group card-body">
         <label >Group name: </label>
         <input className="form-control input-sm" type="text"  onChange={this.onNameChange.bind(this)}/>
         <br></br>
@@ -49,4 +53,5 @@ export default class Group extends Component {
     </div>
     );
   }
+
 }

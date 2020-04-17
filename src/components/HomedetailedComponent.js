@@ -2,7 +2,12 @@ import React from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
 import { Button } from 'reactstrap'; 
 import { Card, CardImg, CardText, CardBody, CardTitle } from 'reactstrap';
-import Group from './Chat/Group.js' 
+import Group from './Chat/Group' 
+import Chat from './Chat/Chat';
+import history from './history';
+import ReactDOM from 'react-dom';
+import './Chat/Chat'
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
  
     function RenderWeb({web}) {
         return(
@@ -18,15 +23,27 @@ import Group from './Chat/Group.js'
     }
     function renderWeb(web){
         if(web!=null){
-            return(
+            history.push('/'+web.name);
+            localStorage.setItem('chat_groupname', web.name);
+            /*return(
                 <div>
-                    <Group selectedWeb={web} />
+                    <Chat  />
                 </div>
-            );
-        }
+            );*/
+            ReactDOM.render(
+                <React.StrictMode>
+                    <BrowserRouter>
+                    <div><Route exact path="/" component={() => <Chat groupname={web.name}/>} /></div>
+                      
+                  </BrowserRouter>
+                
+                </React.StrictMode>,
+                document.getElementById('root')
+              );
+            }
         else{
             return (
-                <div></div>
+                <div>hello</div>
             );
         }
     }
@@ -41,7 +58,7 @@ import Group from './Chat/Group.js'
                           </CardBody>
                          
                 </Card>
-                 <Button color="success" size="lg" block onClick={() => this.renderWeb(web)}>
+                 <Button color="success" size="lg" block onClick={() => renderWeb(web)}>
                           Join
                 </Button>
             </div>  
